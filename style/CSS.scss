@@ -1,0 +1,769 @@
+@import "Nullstyle.scss";
+
+.wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 10px 0 10px;
+}
+.btn {
+  width: 208px;
+  height: 56px;
+  display: flex;
+  line-height: 22px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  background-color: #000;
+  border-radius: 40px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  //border: 1px solid #000;
+  &__nav {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    justify-content: left;
+    gap: 33px;
+    padding: 20px;
+    @media (max-width: 965px) {
+      gap: 13px;
+    }
+
+  }
+  &__btn {
+    margin-top: -14px;
+    @media (max-width: 507px) {
+      width: 150px;
+      height: 46px;
+    }
+  }
+}
+//.link {
+//  color: #000;
+//}
+.nav__item {
+  //&:hover {
+  //  color: #fff;
+  //  background-color: #000;
+  //}
+  & a {
+    color: #000000;
+    padding: 2px 5px;
+  }
+  & a:hover {
+    color: #fff;
+    background-color: #000;
+    border-radius: 15px;
+  }
+  @media (max-width: 846px) {
+    display: none;
+  }
+}
+.sidebar {
+  transform: translateX(-200px);
+  transition: all .3s ease-in;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: #fff;
+  color: #181818;
+  padding: 20px;
+  z-index: 5;
+  ul {
+    li {
+      a {
+        font-size: 18px;
+        font-family: "Oswald", sans-serif;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.6;
+        &:active {
+          color: #000;
+        }
+      }
+    }
+  }
+  &.open {
+    transform: translateX(0px);
+  }
+}
+.burger {
+  display: none;
+  width: 50px;
+  span {
+    display: block;
+    height: 5px;
+    width: 50px;
+    background-color: #000;
+    transition: width .3s ease-in;
+    margin: 0 auto;
+  }
+
+  span + span {
+    margin-top: 6px;
+  }
+  &__2 {
+    background-color: transparent !important;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      transition: all .3s ease-in;
+      position: absolute;
+      display: block;
+      height: 5px;
+      width: 50px;
+      background-color: #000;
+    }
+  }
+  &.open {
+    .burger__1,
+    .burger__3 {
+      width: 0 !important;
+    }
+    .burger__2 {
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  @media (max-width: 846px) {
+    display: block;
+  }
+}
+.modal {
+  //display: none;
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5); /* цвет фона */
+  z-index: 10;
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  //pointer-events: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+    left: 0;
+    background-color: #fff;
+    border-radius: 40px;
+    @media (max-width: 510px) {
+      height: 300px;
+      width: 300px;
+    }
+  }
+  &__title {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+    color: #1B1B1D;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__input {
+    height: 50px;
+    width: 300px;
+    border: 3px solid #000;
+    border-radius: 30px;
+    margin: 20px;
+    font-size: 20px;
+    padding: 10px;
+    @media (max-width: 510px) {
+      width: 240px;
+      margin-bottom: 5px;
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+
+  }
+}
+
+.main {
+  margin-top: 123px;
+  display: flex;
+  justify-content: space-around;
+  @media (max-width: 1200px) {
+
+    margin-top: 20px;
+  }
+  @media (max-width: 820px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 50px;
+  }
+  @media (max-width: 592px) {
+    margin: 0 0;
+  }
+ &__column {
+//border: 1px solid #000;
+ }
+  &__content {
+    width: 650px;
+    position: relative;
+    top: -30px;
+    left: 0;
+    @media (max-width: 1250px) {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+    }
+    //@media (max-width: 872px) {
+    //  width: 450px;
+    //  height: 450px;
+    //}
+    @media (max-width: 820px) {
+      margin-top: 60px;
+      width: 400px;
+      height: 400px;
+    }
+  }
+  &__title {
+    max-width: 597px;
+    max-height: 420px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 124px;
+    line-height: 140px;
+    @media (max-width: 1250px) {
+      //width: 400px;
+      //height: 420px;
+      font-size: 97px;
+    }
+    @media (max-width: 1000px) {
+      //width: 400px;
+      //height: 420px;
+      font-size: 60px;
+      line-height: 80px;
+    }
+  }
+  &__text {
+    margin-top: 10px;
+    max-width: 530px;
+    padding: 0 20px 0 20px;
+    height: 70px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
+  }
+  &__btns {
+    display: flex;
+    gap: 30px;
+    margin-top: 70px;
+    @media (max-width: 1000px) {
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+  }
+  &__btn {
+
+  }
+  &__link {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    padding: 15px;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+}
+
+.menu {
+  margin-top: 270px;
+  position: relative;
+  &__title {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 70px;
+    text-align: center;
+  }
+  &__text {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+    color: #64646A;
+    margin-top: 20px;
+    @media (max-width: 1224px) {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: -135px;
+    left: 0;
+    @media (max-width: 1224px) {
+      position: absolute;
+      top: -250px;
+      left: 0;
+    }
+  }
+  &__img img {
+    @media (max-width: 900px) {
+      height: 500px;
+    }
+
+  }
+}
+.categories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 120px;
+  @media (max-width: 914px) {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    width: 390px;
+    padding: 30px;
+    margin: 0 auto;
+  }
+  &__title {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 52px;
+    color: #1B1B1D;
+    white-space: nowrap;
+  }
+  &__text {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #64646A;
+    margin-top: 8px;
+    height: 100px;
+  }
+  &__img {
+    //margin: 60px 80px 60px 80px;
+    //margin: 0 auto;
+    margin-top: 60px;
+    text-align: center;
+
+  }
+  &__btn {
+    //display: inline-block;
+    margin-top: 60px;
+    position: relative;
+    top: 0;
+    left: 60px;
+  }
+}
+.favourite {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+  @media (max-width: 1034px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  &__column img{
+
+    @media (max-width: 1034px) {
+      width: 600px;
+      display: block;
+      margin: 0 auto;
+    }
+    @media (max-width: 784px) {
+      width: 450px;
+      display: block;
+      margin: 0 auto;
+    }
+    @media (max-width: 500px) {
+      width: 400px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &__column {
+    margin-left: 90px;
+    @media (max-width: 1184px) {
+      margin-left: 10px;
+    }
+  }
+  &__title {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 70px;
+    color: #1B1B1D;
+    @media (max-width: 650px) {
+      font-size: 50px;
+    }
+  }
+  &__text {
+    margin-top: 20px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #64646A;
+  }
+  &__btn {
+    margin-top: 55px;
+  }
+}
+
+.selling {
+  margin-top: 150px;
+  &__title {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 70px;
+    text-align: center;
+    color: #1B1B1D;
+  }
+  &__text {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+    color: #64646A;
+    max-width: 600px;
+    margin: 10px auto;
+  }
+}
+.order {
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 1032px) {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    @media (max-width: 1032px) {
+      margin: 0 auto;
+    }
+    width: 390px;
+    height: 548px;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__img {
+
+  }
+  &__name {
+    margin-top: 115px;
+  }
+  &__rating {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #64646A;
+  }
+  &__title {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 44px;
+    color: #1B1B1D;
+  }
+  &__text {
+    margin-top: 20px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 325px;
+    height: 85px;
+  }
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+  &__cost {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 28px;
+    padding: 15px;
+  }
+  &__btn {
+
+  }
+}
+
+.app {
+  margin-top: 170px;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 1070px) {
+    display: flex;
+    flex-direction: column;
+  }
+  &__info {
+    margin-top: 170px;
+    @media (max-width: 1070px) {
+      margin-top: 30px;
+    }
+  }
+  &__title {
+    font-family: 'Jost',sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 70px;
+    color: #1B1B1D;
+  }
+  &__text {
+    margin-top: 15px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #64646A;
+  }
+  &__btn {
+    margin-top: 60px;
+  }
+  &__img {
+    background-image: url("../img/Ellipse 10.png");
+    //background-size: cover;
+    background-position: 50px 180px;
+    background-repeat: no-repeat;
+    @media (max-width: 1070px) {
+      margin: 0 auto;
+    }
+    @media (max-width: 674px) {
+      //width: 500px;
+      background-position: 0 80px;
+      background-size: 400px;
+    }
+
+  }
+  &__img img {
+    @media (max-width: 674px) {
+      width: 400px;
+    }
+  }
+}
+
+.footer {
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 840px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__column {
+    @media (max-width: 840px) {
+      margin: 0 auto;
+    }
+  }
+  &__logo {
+
+  }
+  &__text {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    color: #64646A;
+    max-width: 558px;
+    margin-top: 40px;
+  }
+  &__subtitle {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+    color: #1B1B1D;
+    margin-top: 108px;
+  }
+  &__location {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    color: #64646A;
+    margin-top: 30px;
+    max-width: 558px;
+  }
+  &__find {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #1B1B1D;
+    margin-top: 30px;
+
+  }
+
+  &__title {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+    color: #1B1B1D;
+    @media (max-width: 840px) {
+      margin-top: 20px;
+    }
+  }
+  &__mail {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+    color: #64646A;
+    margin-top: 35px;
+    &::before {
+      content: url("../icons/email 1.png");
+      position: relative;
+      top: 5px;
+      left: 0;
+      padding-right: 20px;
+    }
+  }
+  &__phone {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+    color: #64646A;
+    margin-top: 43px;
+    &::before {
+      content: url("../icons/Call 1.png");
+      position: relative;
+      top: 5px;
+      left: 0;
+      padding-right: 20px;
+    }
+  }
+  &__social {
+    margin-top: 30px;
+
+  }
+  &__social img {
+    margin-top: 20px;
+    margin-right: 40px;
+  }
+  &__first {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 50px;
+    color: #1B1B1D;
+    margin-top: 90px;
+  }
+  &__input {
+    width: 413px;
+    height: 70px;
+    background: #FFFFFF;
+    box-shadow: 0 12px 30px rgba(205, 209, 214, 0.28);
+    border-radius: 65px;
+    margin-top: 30px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    color: #64646A;
+    opacity: 0.7;
+  }
+  &__btn {
+    margin-top: 60px;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 130px;
+    @media (max-width: 660px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__copytright {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    color: #64646A;
+  }
+  &__privacy {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    color: #64646A;
+  }
+}
+
+.show {
+display: block;
+}
+.hide {
+  display: none;
+}
