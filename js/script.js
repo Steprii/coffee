@@ -8,6 +8,7 @@ const closeSidebar = document.querySelector('.sidebar__close');
 
 closeSidebar.addEventListener('click', (event) => {
     sidebar.classList.remove("open");
+    burger.classList.remove("open");
 })
 
 burger.addEventListener(
