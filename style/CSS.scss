@@ -178,16 +178,14 @@
   }
 }
 .modal {
-  //display: none;
-  position: fixed; /* фиксированное положение */
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.5); /* цвет фона */
+  background: rgba(0,0,0,0.5);
   z-index: 10;
-  transition: opacity 200ms ease-in; /* анимация перехода */
-  //pointer-events: none;
+  transition: opacity 200ms ease-in;
   margin: 0;
   padding: 0;
 
