@@ -152,6 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #181818;
   padding: 20px;
   z-index: 5;
+  overflow: hidden;
 }
 .sidebar ul li a {
   font-size: 18px;
@@ -163,6 +164,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sidebar ul li a:active {
   color: #000;
+}
+.sidebar__close {
+  position: relative;
+  top: -150px;
+  left: 130px;
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+.sidebar__close span:first-child {
+  display: block;
+  height: 2px;
+  width: 50px;
+  background-color: #000;
+  transform: rotate(45deg);
+  margin: 0 auto;
+  position: relative;
+  top: 21px;
+  left: 0;
+}
+.sidebar__close span:last-child {
+  display: block;
+  height: 2px;
+  width: 50px;
+  background-color: #000;
+  transform: rotate(-45deg);
+  margin: 0 auto;
+  position: relative;
+  top: 20px;
+  left: 0;
 }
 .sidebar.open {
   transform: translateX(0px);

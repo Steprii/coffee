@@ -4,6 +4,11 @@ function showInConsole(someItem) {
 
 let burger = document.querySelector("#burger");
 let sidebar = document.querySelector("#sidebar");
+const closeSidebar = document.querySelector('.sidebar__close');
+
+closeSidebar.addEventListener('click', (event) => {
+    sidebar.classList.remove("open");
+})
 
 burger.addEventListener(
     "click", (e) => {

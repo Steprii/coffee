@@ -79,6 +79,7 @@
   color: #181818;
   padding: 20px;
   z-index: 5;
+  overflow: hidden;
   ul {
     li {
       a {
@@ -93,6 +94,37 @@
         }
       }
     }
+  }
+  &__close {
+    position: relative;
+    top: -150px;
+    left: 130px;
+    display: block;
+    height: 50px;
+    width: 50px;
+  }
+
+  &__close span:first-child{
+    display: block;
+    height: 2px;
+    width: 50px;
+    background-color: #000;
+    transform: rotate(45deg);
+    margin: 0 auto;
+    position: relative;
+    top: 21px;
+    left: 0;
+  }
+  &__close span:last-child{
+    display: block;
+    height: 2px;
+    width: 50px;
+    background-color: #000;
+    transform: rotate(-45deg);
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    left: 0;
   }
   &.open {
     transform: translateX(0px);
