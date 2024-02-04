@@ -265,6 +265,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fff;
   border-radius: 40px;
 }
+.modal_input{
+  width: 350px;
+  
+}
 @media (max-width: 510px) {
   .modal__item {
     height: 300px;
@@ -282,11 +286,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 .modal__input {
+  display: block;
   height: 50px;
   width: 300px;
   border: 3px solid #000;
   border-radius: 30px;
-  margin: 20px;
+  margin: 20px auto;
   font-size: 20px;
   padding: 10px;
 }
@@ -296,8 +301,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 5px;
   }
 }
+@media (max-width: 510px) {
+  .modal__btn {
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    margin-top: 100px;
+  }
+}
 .modal__btn {
   margin: 0 auto;
+  max-width: 200px;
+  
 }
 
 .main {
